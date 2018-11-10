@@ -1,0 +1,81 @@
+基础和专业基础必修课 
+        1301301 数学分析(Ⅰ)
+        1301301 数学分析
+        1301301 数学分析(Ⅲ)
+        1301302 高等代数(Ⅰ)
+        1301302 高等代数
+        1301303 解析几何
+        1301304 常微分方程
+        1301305 近世代数
+        1301306 复变函数
+        1301307 微分几何
+        1301308 拓扑学
+        1301309 实变函数
+        1301310 概率统计
+        1301311 数学模型
+        1301312 泛函分析
+        1301313 偏微分方程
+
+一、公共课类。（本科生） 
+  1. 高等数学（公共课）（Calculus I II III）  难度值：3.2   
+    Texkbook:《托马斯大学微积分》 英文版  机械工业出版社 
+           Author: 加州大学戴维斯分校 (Joel Hass)、海军研究生院 (Maurice D.Weir)、 
+    麻省理工学院 (George B.Thomas.Jr)、 
+        基础课：无 
+  2. 线性代数（公共课）（Linear Algebra）  难度值：2.8   
+    推荐教材《Linear Algebra》 Kenneth Hoffman 麻省理工学院  世界图书出版公司  
+       基础课：无 
+  3. 复变函数（公共课）（Complex analysis） 难度值：3.2    
+    推荐教材《复变函数》 王绵森 高等教育出版社 
+           基础课：微积分，线性代数 
+  4. 概率论与数理统计（公共课）（Probability and Mathematic statistics）  难度值： 3.4 
+        基础课：线性代数，微积分 
+二、专业课类。（本科生、研究生） 
+  5. 高等代数（本科生专业必修课）（Higher Algebra）  难度值：6.0 
+        推荐教材：《高等代数》第三版  高等教育出版社  北京大学前几何代数研究组 
+        基础课：无 
+  6. 数学分析（本科生专业必修课）（Analysis I II III）  难度值：6.0 
+                推荐教材《数学分析新讲》一二三  张筑生 
+                 《Undergraduate Analysis》 Serge Lang   Yale University 
+         基础课： 无 
+  7. 解析几何（本科生专业必修课）（Analytic Geometry） 难度值：3.0 
+         推荐教材：《解析几何》 邱维生 北京大学出版社 
+         基础课：无 
+  8. 数学建模（本科生专业选修课）（Mathematic Modeling） 难度值： 2.5 
+         基础课：数学分析，高等代数 
+  9. 初等数论（本科生专业限选课）（Elementary number theory） 难度值： 5.6～10 
+         推荐教材：《哈代数论》 哈代(G.H.Hardy) 人民邮电出版社 
+         基础课：无 
+  10.复变函数（专业必修课）（Complex Analysis） 难度值：6.1 
+  推荐教材《复分析，可视化方法》 Tristan Needham  人民邮电出版社  
+                 《复分析》  ELIAS M. STEIN  Princeton University 
+         基础课：无 
+  11.离散数学（本科生专业必修课）（Discrete Mathematics） 难度值： 7.9 
+        推荐教材《DISCRETE MATHEMATICS AND ITS APPLICATIONS》 Kenneth H. Rosen 
+        机械工业出版社 
+        基础课：高等代数 
+  12.数学软件与实验（专业选修课）  难度值：2.0 
+  13.数值分析（本科生专业必修课）（Numerical Analysis）  难度值：6.5 
+         推荐教材： 《Numerical Analysis》 Richard Burden 高等教育出版社 
+  基础课：数学分析，高等代数 
+  14.概率论与数理统计（专业必修课）（Probability and Mathematic statistics） 难度值：6.5 
+       推荐教材《概率论教程》 Kai-Lai Chung 机械工业出版社 
+       基础课：数学分析，高等代数，实分析 
+  15.实分析（本科生专业必修课）（Real Analysis） 难度值：9.4 
+       推荐教材《Real Analysis》 Stein  世界图书出版社 
+  《Real Analysis and Probability》 Dudley 机械工业出版社 
+   基础课：数学分析，高等代数 
+  16.实变函数（研究生公共课）（Real Analysis） 难度值：8.8 
+       推荐教材《实变函数论》 周民强 北京大学出版社 
+       基础课：微积分，线性代数 
+  17.泛函分析（本科生专业必修课）（Functional Analysis）  难度值：9.2 
+       推荐教材《Functional Analysis》  Rudin 
+       基础课：数学分析，实分析，高等代数 
+  18.泛函分析（研究生公共课）（Functional Analysis）  难度值：8.7 
+
+作为苦逼数学系学生，只能告诉你本科期间数学分三条主线：
+分析学（有可能开课顺序略有不同）：数分——实变——泛函——复变——常微分——偏微分——概率论与数理统计
+代数学：高代——抽代——数论——离散——图论
+几何学：解几——拓扑——微分几何
+当然，还会有一些C、C++、数据结构、计算机图形学、运筹学、物理学等课程
+分析学的基础是数分，据说大牛都在做吉米多维奇的习题集，反正我是没碰过。数分绝对要学懂【只要能理解就好了，不一定要考高分，如果想得奖学金的除外】，后面一大串课程都要用到它
