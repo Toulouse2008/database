@@ -1,0 +1,53 @@
+##########==================>Postgresql教程 <==================##########
+Mac 下用homebrew安装
+	$ brew install postgresql@10
+
+启动postgresql
+	-$ brew services start postgresql
+建立一个数据库
+	-$createdb frank		|| dropdb frank
+进入psql
+	-$psql	==> psql(10.4)		Type “Help” for help.      frank=#
+	frank=#\q	<===退出		\h:   for helo
+进入指定数据库
+	$psql dbname
+
+导入数据
+	- $createdb db_name
+	- go to the folder where .sql file located
+	- $psql -s db_name
+	dbname=>\i your_sql.sql
+停止
+  $brew services stop postgresql
+
+
+
+How completely uninstall PostgreSQL 9.X on Mac OSX
+
+This article is referenced from stackoverflow:
+
+If installed PostgreSQL with homebrew , enter brew uninstall postgresql
+
+If you used the EnterpriseDB installer , follow the following step.
+
+Run the uninstaller on terminal window
+
+sudo /Library/PostgreSQL/9.X/uninstall-postgresql.app/Contents/MacOS/installbuilder.sh
+
+If installed with Postgres Installer, do:
+
+open /Library/PostgreSQL/9.X/uninstall-postgresql.app
+
+Remove the PostgreSQL and data folders. The Wizard will notify you that these were not removed.
+
+sudo rm -rf /Library/PostgreSQL
+
+Remove the ini file:
+
+sudo rm /etc/postgres-reg.ini
+
+Remove the PostgreSQL user using System Preferences -> Users & Groups.
+
+Unlock the settings panel by clicking on the padlock and entering your password.
+Select the PostgreSQL user and click on the minus button.
+Restore your shared memory settings: sudo rm /etc/sysctl.conf
