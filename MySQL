@@ -1,0 +1,99 @@
+安装与卸载
+Mac Mysql Command to start:
+
+sudo /usr/local/mysql/support-files/mysql.server start
+
+
+
+If you lose this password, please consult the section How to Reset the Root Password in the MySQL reference manual
+
+MySQL server start and stop
+Pre5.7
+start
+sudo /usr/local/mysql/support-files/mysql.server start
+
+stop
+sudo /usr/local/mysql/support-files/mysql.server stop
+
+restart
+sudo /usr/local/mysql/support-files/mysql.server restart
+Post5.7
+sudo launchctl load -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist
+sudo launchctl unload -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist
+
+
+Linux
+start:::    /etc/init.d/mysqld start    Stop:: /etc/init.d/mysqld stop  Restart:: /etc/init.d/mysqld restart
+
+Linux service flavor version
+start:: service mysql start      Stop:: service mysql stop   Restart::   service mysql restart
+
+
+
+
+mysql Home-brew install location
+/usr/local/Cellar/mysql/5.7.17/support-files
+
+Problem with Load local infile:
+use this command: mysql --local-infile=1   /-p  # if you have a password
+instead of this command: mysql -uroot    /-p  # if you have a password 
+
+in the command line prompt:
+Create table:
+$sudo mysql menagerie < cr_pet_tbl.sql
+Load data:
+$sudo mysql menagerie < load_pet_tbl.sql
+$sudo mysqlimport --local menagerie pet.txt
+
+
+$sudo mysql -t <world.sql   // create world database and table schema, insert data
+
+$sudo mysql <employees.sql    //create employee database and table schema, insert data
+
+
+
+Follow this one if you install the dmg file.
+To uninstall MySQL and completely remove it (including all databases) from your Mac do the following:
+* Open a terminal window
+* Use mysqldump to backup your databases to text files!
+* Stop the database server
+* sudo rm /usr/local/mysql
+* sudo rm -rf /usr/local/mysql*
+* sudo rm -rf /Library/StartupItems/MySQLCOM
+* sudo rm -rf /Library/PreferencePanes/My*
+* edit /etc/hostconfig and remove the line MYSQLCOM=-YES-
+* rm -rf ~/Library/PreferencePanes/My*
+* sudo rm -rf /Library/Receipts/mysql*
+* sudo rm -rf /Library/Receipts/MySQL*
+* sudo rm -rf /private/var/db/receipts/*mysql*
+The last three lines are particularly important as otherwise, you can't install an older version of MySQL even though you think that you've completely deleted the newer version!
+
+
+
+Remove MySQL completely
+1. Open the Terminal
+2. Use mysqldump to backup your databases
+3. Check for MySQL processes with: ps -ax | grep mysql
+4. Stop and kill any MySQL processes
+5. Analyze MySQL on HomeBrew:  brew remove mysql
+6. brew cleanup
+7.  
+8. Remove files:  sudo rm /usr/local/mysql
+9. sudo rm -rf /usr/local/var/mysql
+10. sudo rm -rf /usr/local/mysql*
+11. sudo rm ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+12. sudo rm -rf /Library/StartupItems/MySQLCOM
+13. sudo rm -rf /Library/PreferencePanes/My*
+14.  
+15. Unload previous MySQL Auto-Login:  launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+16.  
+17. Remove previous MySQL Configuration:  subl /etc/hostconfig` 
+18. # Remove the line MYSQLCOM=-YES-
+19.  
+20. Remove previous MySQL Preferences:  rm -rf ~/Library/PreferencePanes/My*
+21. sudo rm -rf /Library/Receipts/mysql*
+22. sudo rm -rf /Library/Receipts/MySQL*
+23. sudo rm -rf /private/var/db/receipts/*mysql*
+24.  
+25. Restart your computer just to ensure any MySQL processes are killed 
+26. Try to run mysql, it shouldn't work
