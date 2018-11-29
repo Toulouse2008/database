@@ -1,0 +1,22 @@
+1NF:
+  1. No repeating groups
+  2. Data values are unique
+  3. Field names are unique
+  4. The relation has a primary key
+  5. The order of rows does not mater
+
+2NF: in 1NF and the followings
+  1. All attributes are dependent on full primary key
+  2. No non-key column is dependent on only a protion of the primary key
+  3. Each non-key attribute is fully functionally dependent on the primary key
+  4. Each attribute that is not in the primary key provides a fact that depends on the entire key.
+  NOTE:
+    1~4 are saying the same thing===>Solve the compound primary key issue
+    The relations in 1NF without a compound primary key are automatically in 2NF
+    Handling --> Non-repeating Field values
+
+3NF: 
+  1. Each non-primary key attribute provides a fact that is independent of other non-key attributes and depends only on the key.
+  2. Each non-key attribute is dependent on the PK and only on the PK
+  3. All non-key attributes are not dependent on any other non-key attributes
+  4. The only determinants are candidate keys (Boyce-Cold Normal Form: BCNF)
