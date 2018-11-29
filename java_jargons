@@ -1,0 +1,12 @@
+CORS: Cross-Origin Resource Sharing ---> res.header("Access-Control-Allow-Origin", "*");
+CRM: Client Relationship 
+JAX-RPC: Java API for Remote Procedure Call
+JAX-RS: Java API for Restful Service
+JAX-WS: Java API for XML Web Service (SOAP: Simple Object Access Protocol)
+POJO: Plain Old Java Object
+POM: Project Object Model --->POM.xml
+RMI: Remote Method Invocation
+SEI: Service Endpoint Interface
+SIB: Service Implementation Bean
+WSDL: Web Service Description Language
+Web Service: 使用http协议发行SOAP协议封装的数据，是一种远程调用技术
