@@ -1,0 +1,47 @@
+Mongodb GridFS——适合大小超过16MB的文件
+一、概述
+    GridFS是基于mongodb存储引擎是实现的“分布式文件系统”，底层基于mongodb存储机制，和其他本地文件系统相比，它具备大数据存储的多个优点。GridFS适合存储
+    超过16MB的大型文件，不过16M数据在当今互联网时代，已经不足为奇。我们可以使用GridFS构建大规模的“图片服务器”、“文档服务器”、“视频、音频”文件服务器，
+    GridFS对于web应用，可以结合nginx插件“ningx-gridfs”能够简单的实现负载均衡等特性，非常便捷；可以简单认为GridFS是为web应用而生。个人认为，目前架构
+    比较简单的NoSQL文件系统中GridFS是最优秀的。
+
+ 
+
+    GridFS并不是将单个文件直接存储为一个document，而是将文件分成多个parts或者说chunks，然后将每个chunk作为作为一个单独的document存储，然后将chunks
+    有序保存。默认情况下，GridFS的chunk大小位255k。GridFS使用2个collections来存储这些文件，一个collection存储文件的chunks（实际文件数据），另一个
+    则存储文件的metadata（用户自定义的属性，filename，content-type等）。
+
+ 
+
+    当用户查询GridFS中的文件时，客户端或者driver将会重新按序组装这些chunks。用户可以range查询文件，也可以获取文件的任意部分的信息，比如：跳过（skip）
+    视频或者音频（任何文件）的中间部，实现“range access of single file”。
+
+ 
+
+    对于mongodb而言，每个document最大尺寸为16M，如果想存储一条数据（比如一个文件）超过16M，那么只能使用GridFS支持；GridFS可以支持单个文件尺寸达到
+    数G，读取文件时可以分段读取。此外，GridFS可以从Mongodb的高性能、高可用特性中获益，比如我们可以在“replica set”或者“sharding”架构模式下使
+    用GridFS。
+
+ 
+
+二、使用场景
+
+    document的大小超过16M是使用GridFS的条件之一，因为mongodb普通的collection无法支持16M以上的document，我们不得不选择其他方案；在一些情况下，将这
+    些大文件存储在GridFS中，比直接存储在本地文件系统中更加适合：
+
+    1）如果你的文件系统对每个目录下文件的个数有限制（或者太多，将会影响文件的打开速度等）。
+
+    2）如果你的文件数据，有分数据中心镜像保存（大数据情况，可用性保证）。
+
+    3）如果你希望访问一个超大的文件，而不希望将它全部加入内存，而是有“range access”的情况，即分段读取，那么GridFS天生就具备这种能力，你可以随意访问
+    任意片段。
+
+ 
+
+    对于一个大文件，如果你希望原子性的更新它的全部内容，那么GridFS将不适合；比如同时更新一个文件的多个chunk，因为mongodb本身没有事务机制。
+
+ 
+
+    对于小于16M的文件，比如一些图片、CSS、js文件等，应该将它们直接存储在普通的collection中而非GridFS（bindata，参见org.bson.types.Binary），因为
+    它们通常较小，GridFS无法发挥其优势。当然，你为了统一application的“文件系统”存储方式，也可以将这些小文件保存在GridFS中，性能也不会差的太多，为了
+    提升性能，对这些小文件，可以在存储时手动设置它的chunkSize，避免文件被切分成多个chunks来提高性能。
